@@ -6,10 +6,38 @@
 }
 
 body {
-  font-family: Georgia, serif;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   color: #2a2a2a;
   background-color: #f7f0e7;
 }
+
+.bodytext {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.header {
+  font-family: "Inria Serif", serif;
+  font-weight: 300;
+  font-size: 42px;
+}
+
+.subhead {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px
+}
+
+.white-text {
+  color: #FAF6ED
+}
+
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300&display=swap');
 
 /* HEADER */
 .top-header {
@@ -19,19 +47,19 @@ body {
   border-bottom: 2px solid rgba(0,0,0,0.25);
   text-align: left;
   display: flex;
-
   justify-content: space-between;
+  z-index: 1; /* Ensure it stays on top of the hero image */
 }
-
 
 .site-title {
   font-size: 28px;
   letter-spacing: 3px;
   font-weight: 300;
   text-align: left;
+  position: relative;
+  z-index: 1;
 }
 
-/* CONTACT BUTTON TOP RIGHT */
 .contact-btn {
   position: absolute;
   top: 20px;
@@ -45,54 +73,65 @@ body {
   text-decoration: none;
 }
 
-/* HERO SECTION */
 .hero-section {
-  background-image: url('https://via.placeholder.com/2000x1100');
+  background-image: url('hero.png'); /* Path to your image */
   background-size: cover;
   background-position: center;
-  padding: 120px 20px;
+  padding: 150px 20px 120px; /* Increased top padding to make it overlap header */
   text-align: center;
+  position: relative;
+  top: -100px; /* Moves the hero section up, so it overlaps the header */
+  z-index: 0; /* Behind the header */
 }
 
-.overlay {
+.hero-section .overlay {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Make sure the text stays above the background image */
 }
 
+
 .hero-heading {
-  font-size: 60px;
-  font-weight: 300;
+  font-family: "Inria Serif", serif; /* Ensure the correct font is applied */
+  font-size: 66px;
+  font-weight: 300; /* Set font weight to 300 */
   margin-bottom: 20px;
 }
 
+
 .hero-subheading {
-  font-size: 24px;
-  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
   margin-bottom: 20px;
 }
 
 .hero-text {
-  font-size: 20px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
   max-width: 700px;
   margin: 0 auto;
+  font-weight: 400;
 }
 
-/* INTRO SECTION (IMAGE + TEXT) */
 
+/* INTRO SECTION (IMAGE + TEXT) */
 .intro-section {
-  padding: 80px 40px;
+  padding-left: 60px !important;
+  padding-right: 60px !important;
 }
 
 .intro-inner {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
-  display: flex;
   gap: 60px;
+  display: flex;
   align-items: flex-start;
 }
 
 .intro-image {
-  flex: 0 0 45%;
+  flex: 0 0 35%;
 }
 
 .intro-image img {
@@ -113,6 +152,7 @@ body {
   font-weight: 300;
 }
 
+
 .intro-welcome {
   font-size: 20px;
   margin-bottom: 16px;
@@ -124,8 +164,6 @@ body {
   margin-bottom: 16px;
   max-width: 520px;
 }
-
-/* Button style to match the dark rounded one */
 
 .btn-primary {
   display: inline-block;
@@ -139,25 +177,7 @@ body {
   font-size: 14px;
 }
 
-/* Responsive: stack columns on smaller screens */
-
-@media (max-width: 768px) {
-  .intro-inner {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .intro-section {
-    padding: 50px 20px;
-  }
-
-  .intro-heading {
-    font-size: 30px;
-  }
-}
-
 /* ===== OVERLAP SECTION ===== */
-
 .overlap-section {
   padding: 100px 40px 140px;
   background: #f7f0e7;
@@ -171,12 +191,10 @@ body {
   align-items: flex-start;
 }
 
-/* WIDER PURPLE BLOCK */
-
 .overlap-text-block {
   background: #3a2737;
   padding: 110px 110px;
-  flex: 0 0 72%; /* IMPORTANT: makes purple block wider */
+  flex: 0 0 72%;
   color: #e6e0e6;
 }
 
@@ -191,22 +209,16 @@ body {
   font-size: 34px;
   line-height: 1.4;
   font-weight: 300;
-  max-width: 600px; /* allow it to fill more width */
+  max-width: 600px;
 }
-
-
-/* IMAGE SECTION — SMALLER + MORE CENTRAL */
 
 .overlap-image-wrapper {
-  flex: 0 0 28%;     /* smaller proportion */
-  max-width: 340px;  /* smaller physical width */
+  flex: 0 0 28%;
+  max-width: 340px;
   position: relative;
-
-  margin-left: -160px; /* pulls image left into the purple block */
-  margin-top: 50px;    /* moves image down slightly */
+  margin-left: -160px;
+  margin-top: 50px;
 }
-
-/* BORDER AROUND ALL SIDES */
 
 .overlap-image-border {
   position: absolute;
@@ -226,9 +238,7 @@ body {
   z-index: 2;
 }
 
-
 /* ===== RESPONSIVE ===== */
-
 @media (max-width: 900px) {
   .overlap-inner {
     flex-direction: column;
@@ -258,10 +268,11 @@ body {
 }
 
 /* ===== ABOUT CALLA SECTION ===== */
-
 .about-calla-section {
-  padding: 120px 100px;
-  background: #f7f0e7; /* same cream background */
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+  background: #f7f0e7;
 }
 
 .about-calla-inner {
@@ -272,16 +283,12 @@ body {
   gap: 80px;
 }
 
-/* IMAGE */
-
 .about-calla-image img {
   height: 600px;
   width: auto;
   display: block;
   border-radius: 4px;
 }
-
-/* TEXT CONTENT */
 
 .about-calla-content {
   flex: 1;
@@ -305,8 +312,6 @@ body {
   line-height: 1.6;
   margin-bottom: 20px;
 }
-
-/* INFO BOX AT BOTTOM */
 
 .about-calla-info {
   margin-top: 50px;
@@ -335,33 +340,9 @@ body {
   color: #4a3a46;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-  .about-calla-inner {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .about-calla-heading {
-    font-size: 32px;
-  }
-
-  .about-calla-bold {
-    font-size: 20px;
-  }
-
-  .info-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
-  }
-}
-
 /* ===== SUPPORT / EMOTIONS SECTION ===== */
-
 .support-section {
-  background-color: #dfdfee; /* soft lilac */
+  background-color: #dfdfee;
   padding: 100px 40px;
 }
 
@@ -372,8 +353,6 @@ body {
   align-items: center;
   gap: 80px;
 }
-
-/* TEXT SIDE */
 
 .support-text {
   flex: 1;
@@ -398,14 +377,12 @@ body {
   max-width: 600px;
 }
 
-/* IMAGE SIDE WITH FRAME */
-
 .support-image-frame {
   flex: 0 0 40%;
   max-width: 480px;
-  border: 2px solid #c9c7d8;  /* outer frame */
-  padding: 18px;              /* gap between frame & image */
-  background-color: #dfdfee;  /* same as section bg */
+  border: 2px solid #c9c7d8;
+  padding: 18px;
+  background-color: #dfdfee;
 }
 
 .support-image-frame img {
@@ -414,44 +391,24 @@ body {
   display: block;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-  .support-inner {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .support-section {
-    padding: 70px 20px;
-  }
-
-  .support-heading {
-    font-size: 30px;
-  }
-}
-
 /* ===== CONTACT SECTION ===== */
-
 .contact-section {
   background: #f7f0e7;
-  padding: 160px 80px 140px;  /* Increased left and right padding */
+  padding: 160px 80px 140px;
 }
 
 .contact-inner {
-  max-width: 1200px;           /* Shrink width of the whole section */
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   display: flex;
   align-items: center;
 }
 
-/* LEFT IMAGE + FRAME */
-
 .contact-image-wrapper {
   position: relative;
-  width: 330px;                /* Shrink image width */
-  margin-right: -90px;         /* Keeps image overlapping */
+  width: 330px;
+  margin-right: -90px;
   z-index: 3;
 }
 
@@ -473,11 +430,9 @@ body {
   z-index: 2;
 }
 
-/* RIGHT PURPLE BOX */
-
 .contact-box {
   background: #3a2737;
-  padding: 80px 90px 110px 120px; /* More padding to balance the layout */
+  padding: 80px 90px 110px 180px;
   flex: 0 0 80%;
   color: #f3edf4;
   position: relative;
@@ -485,17 +440,15 @@ body {
 }
 
 .contact-heading {
-  font-size: 38px; /* Slightly smaller heading */
+  font-size: 38px;
   font-weight: 300;
   margin-bottom: 30px;
 }
 
-/* TWO COLUMNS */
-
 .contact-columns {
   display: flex;
   gap: 70px;
-  margin-bottom: 30px; /* Shrink spacing */
+  margin-bottom: 30px;
 }
 
 .contact-left,
@@ -519,8 +472,6 @@ body {
   opacity: 0.9;
 }
 
-/* BUTTON */
-
 .contact-btn-bottom {
   display: inline-block;
   padding: 12px 35px;
@@ -533,75 +484,50 @@ body {
   margin-top: 30px;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-  .contact-inner {
-    flex-direction: column;
-  }
-
-  .contact-image-wrapper {
-    width: 100%;
-    max-width: 380px;
-    margin-right: 0;
-    margin-bottom: 40px;
-  }
-
-  .contact-box {
-    padding: 60px 40px;
-    flex: 1;
-  }
-
-  .contact-columns {
-    flex-direction: column;
-    gap: 40px;
-  }
-}
-
 /* ===== QUOTE SECTION ===== */
 .quote-section {
-  background: #e2d9f3;  /* Soft purple background */
-  padding: 40px 40px;
-  text-align: center;  /* Center all the text */
+  background-color: #DDDFEE;  /* Light purple background */
+  padding: 80px 20px;
+  text-align: center;
 }
 
 .quote-container {
   max-width: 800px;
   margin: 0 auto;
+  padding: 60px 40px;
+  color: #3a2737;  /* Dark text for contrast */
   position: relative;
 }
 
-/* QUOTE MARK */
 .quote-mark {
-  font-size: 150px;
+  font-size: 100px;
+  color: #3a2737;
   position: absolute;
-  top: -130px;
-  left: 50%;
-  transform: translateX(-50%) rotate(180deg);  /* Rotation of the quote mark */
-  color: #3a2737;  /* Color to match the text */
-  z-index: 2;
-  padding-bottom: 50px;
+  top: -30px;
+  font-family: "Inria Serif", serif;
+  transform: translateX(-50%);
 }
 
 blockquote {
-  font-size: 36px;
-  font-weight: 300;
-  color: #3a2737;
+  font-size: 24px;
   line-height: 1.6;
-  position: relative;
-  padding: 30px 50px;
-  background: #e2d9f3;  /* Match background to the section */
-  border-radius: 8px;
-  margin: 40px 0;  /* Add margin for spacing */
+  color: #3a2737;
+  margin: 0 auto 20px;
+  padding-top: 20px;
+  max-width: 700px;
+  font-family: "Inria Serif", serif;
+  font-weight: 300;
+  font-size: 42px;
 }
 
 footer {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 700;
   color: #3a2737;
-  margin-top: 30px;  /* More spacing between the quote and author */
+  text-align: center;
 }
 
-/* Final section */
+/* ===== FINAL SECTION ===== */
 .final-section {
   background-color: #3a2737;
   display: flex;
@@ -627,13 +553,11 @@ footer {
   text-align: right;
 }
 
-/* Qualifications */
 .final-left p {
   font-size: 14px;
   font-weight: normal;
 }
 
-/* Name and Tagline */
 .final-middle h1 {
   font-size: 48px;
   font-weight: 700;
@@ -652,7 +576,6 @@ footer {
   margin-top: 10px;
 }
 
-/* Book Now Button */
 .final-right .book-btn {
   display: inline-block;
   padding: 14px 40px;
