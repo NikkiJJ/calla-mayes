@@ -1,0 +1,665 @@
+/* GENERAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  color: #2a2a2a;
+  background-color: #f7f0e7;
+}
+
+/* HEADER */
+.top-header {
+  width: 100%;
+  padding: 25px 20px 15px;
+  position: relative;
+  border-bottom: 2px solid rgba(0,0,0,0.25);
+  text-align: left;
+  display: flex;
+
+  justify-content: space-between;
+}
+
+
+.site-title {
+  font-size: 28px;
+  letter-spacing: 3px;
+  font-weight: 300;
+  text-align: left;
+}
+
+/* CONTACT BUTTON TOP RIGHT */
+.contact-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #4c3948;
+  color: white;
+  padding: 12px 24px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-image: url('https://via.placeholder.com/2000x1100');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.overlay {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-heading {
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.hero-subheading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* INTRO SECTION (IMAGE + TEXT) */
+
+.intro-section {
+  padding: 80px 40px;
+}
+
+.intro-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.intro-image {
+  flex: 0 0 45%;
+}
+
+.intro-image img {
+  width: auto;
+  height: auto;
+  display: block;
+  height: 550px;
+}
+
+.intro-content {
+  flex: 1;
+}
+
+.sub-head {
+  font-size: 30px;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.intro-welcome {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.intro-content p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  max-width: 520px;
+}
+
+/* Button style to match the dark rounded one */
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 32px;
+  background: #4c3948;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+/* Responsive: stack columns on smaller screens */
+
+@media (max-width: 768px) {
+  .intro-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .intro-section {
+    padding: 50px 20px;
+  }
+
+  .intro-heading {
+    font-size: 30px;
+  }
+}
+
+/* ===== OVERLAP SECTION ===== */
+
+.overlap-section {
+  padding: 100px 40px 140px;
+  background: #f7f0e7;
+}
+
+.overlap-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* WIDER PURPLE BLOCK */
+
+.overlap-text-block {
+  background: #3a2737;
+  padding: 110px 110px;
+  flex: 0 0 72%; /* IMPORTANT: makes purple block wider */
+  color: #e6e0e6;
+}
+
+.small-label {
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  color: #d8d0d8;
+}
+
+.overlap-main-text {
+  font-size: 34px;
+  line-height: 1.4;
+  font-weight: 300;
+  max-width: 600px; /* allow it to fill more width */
+}
+
+
+/* IMAGE SECTION — SMALLER + MORE CENTRAL */
+
+.overlap-image-wrapper {
+  flex: 0 0 28%;     /* smaller proportion */
+  max-width: 340px;  /* smaller physical width */
+  position: relative;
+
+  margin-left: -160px; /* pulls image left into the purple block */
+  margin-top: 50px;    /* moves image down slightly */
+}
+
+/* BORDER AROUND ALL SIDES */
+
+.overlap-image-border {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border: 2px solid #eae2e0;
+  z-index: 1;
+}
+
+.overlap-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .overlap-inner {
+    flex-direction: column;
+  }
+
+  .overlap-text-block {
+    flex: 1;
+    padding: 60px 40px;
+  }
+
+  .overlap-image-wrapper {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  .overlap-image-border {
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+  }
+
+  .overlap-main-text {
+    font-size: 26px;
+  }
+}
+
+/* ===== ABOUT CALLA SECTION ===== */
+
+.about-calla-section {
+  padding: 120px 100px;
+  background: #f7f0e7; /* same cream background */
+}
+
+.about-calla-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+/* IMAGE */
+
+.about-calla-image img {
+  height: 600px;
+  width: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* TEXT CONTENT */
+
+.about-calla-content {
+  flex: 1;
+}
+
+.about-calla-heading {
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 25px;
+  line-height: 1.25;
+}
+
+.about-calla-bold {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.about-calla-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* INFO BOX AT BOTTOM */
+
+.about-calla-info {
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.info-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #e1dce4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #3a2737;
+  flex-shrink: 0;
+}
+
+.info-text {
+  max-width: 550px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4a3a46;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .about-calla-inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-calla-heading {
+    font-size: 32px;
+  }
+
+  .about-calla-bold {
+    font-size: 20px;
+  }
+
+  .info-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+}
+
+/* ===== SUPPORT / EMOTIONS SECTION ===== */
+
+.support-section {
+  background-color: #dfdfee; /* soft lilac */
+  padding: 100px 40px;
+}
+
+.support-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* TEXT SIDE */
+
+.support-text {
+  flex: 1;
+}
+
+.support-heading {
+  font-size: 40px;
+  line-height: 1.35;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.support-subheading {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.support-text p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  max-width: 600px;
+}
+
+/* IMAGE SIDE WITH FRAME */
+
+.support-image-frame {
+  flex: 0 0 40%;
+  max-width: 480px;
+  border: 2px solid #c9c7d8;  /* outer frame */
+  padding: 18px;              /* gap between frame & image */
+  background-color: #dfdfee;  /* same as section bg */
+}
+
+.support-image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .support-inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .support-section {
+    padding: 70px 20px;
+  }
+
+  .support-heading {
+    font-size: 30px;
+  }
+}
+
+/* ===== CONTACT SECTION ===== */
+
+.contact-section {
+  background: #f7f0e7;
+  padding: 160px 80px 140px;  /* Increased left and right padding */
+}
+
+.contact-inner {
+  max-width: 1200px;           /* Shrink width of the whole section */
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* LEFT IMAGE + FRAME */
+
+.contact-image-wrapper {
+  position: relative;
+  width: 330px;                /* Shrink image width */
+  margin-right: -90px;         /* Keeps image overlapping */
+  z-index: 3;
+}
+
+.contact-image-frame {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  right: -18px;
+  bottom: -18px;
+  border: 2px solid #dcd7e0;
+  z-index: 1;
+}
+
+.contact-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* RIGHT PURPLE BOX */
+
+.contact-box {
+  background: #3a2737;
+  padding: 80px 90px 110px 120px; /* More padding to balance the layout */
+  flex: 0 0 80%;
+  color: #f3edf4;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-heading {
+  font-size: 38px; /* Slightly smaller heading */
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+/* TWO COLUMNS */
+
+.contact-columns {
+  display: flex;
+  gap: 70px;
+  margin-bottom: 30px; /* Shrink spacing */
+}
+
+.contact-left,
+.contact-right {
+  flex: 1;
+}
+
+.contact-box h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.contact-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.small-note {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* BUTTON */
+
+.contact-btn-bottom {
+  display: inline-block;
+  padding: 12px 35px;
+  background: #d6d8ea;
+  color: #3a2737;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .contact-inner {
+    flex-direction: column;
+  }
+
+  .contact-image-wrapper {
+    width: 100%;
+    max-width: 380px;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .contact-box {
+    padding: 60px 40px;
+    flex: 1;
+  }
+
+  .contact-columns {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+/* ===== QUOTE SECTION ===== */
+.quote-section {
+  background: #e2d9f3;  /* Soft purple background */
+  padding: 40px 40px;
+  text-align: center;  /* Center all the text */
+}
+
+.quote-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* QUOTE MARK */
+.quote-mark {
+  font-size: 150px;
+  position: absolute;
+  top: -130px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);  /* Rotation of the quote mark */
+  color: #3a2737;  /* Color to match the text */
+  z-index: 2;
+  padding-bottom: 50px;
+}
+
+blockquote {
+  font-size: 36px;
+  font-weight: 300;
+  color: #3a2737;
+  line-height: 1.6;
+  position: relative;
+  padding: 30px 50px;
+  background: #e2d9f3;  /* Match background to the section */
+  border-radius: 8px;
+  margin: 40px 0;  /* Add margin for spacing */
+}
+
+footer {
+  font-size: 18px;
+  color: #3a2737;
+  margin-top: 30px;  /* More spacing between the quote and author */
+}
+
+/* Final section */
+.final-section {
+  background-color: #3a2737;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  color: #f3edf4;
+}
+
+.final-left {
+  flex: 1;
+  font-size: 16px;
+  text-align: left;
+}
+
+.final-middle {
+  flex: 2;
+  text-align: center;
+}
+
+.final-right {
+  flex: 1;
+  text-align: right;
+}
+
+/* Qualifications */
+.final-left p {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Name and Tagline */
+.final-middle h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.final-middle hr {
+  width: 100px;
+  margin: 10px auto;
+  border: 1px solid #dcd7e0;
+}
+
+.final-middle .tagline {
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+/* Book Now Button */
+.final-right .book-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: #d6d8ea;
+  color: #3a2737;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
