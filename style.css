@@ -5,12 +5,27 @@
   box-sizing: border-box;
 }
 
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%; /* Ensure the body doesn’t exceed the screen width */
+}
+
+/* Make sure all containers are responsive */
+* {
+  max-width: 100%; /* Ensure no element exceeds the viewport width */
+  box-sizing: border-box; /* Make sure padding and border are included in width */
+}
+
+
+
 body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   color: #2a2a2a;
   background-color: #f7f0e7;
 }
+
 
 .bodytext {
   font-family: "Inter", sans-serif;
@@ -115,6 +130,37 @@ body {
   font-weight: 400;
 }
 
+/* Mobile-first responsiveness for Header */
+@media (max-width: 600px) {
+  .top-header {
+    flex-direction: column; /* Stack the logo and button vertically */
+    align-items: center;
+    padding: 15px; /* Reduced padding */
+  }
+
+  .site-title {
+    font-size: 24px; /* Slightly smaller font for mobile */
+    margin-bottom: 10px; /* Add space below the title */
+  }
+
+  .contact-btn {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-top: 15px; /* Add space between title and button */
+  }
+
+  .hero-section {
+    top: -0px;
+    margin-bottom: 0 !important;
+    overflow: hidden;
+    position: relative;
+  }
+
+
+}
+
+
 
 /* INTRO SECTION (IMAGE + TEXT) */
 .intro-section {
@@ -176,6 +222,56 @@ body {
   letter-spacing: 3px;
   font-size: 14px;
 }
+
+@media (max-width: 600px) {
+
+  .intro-section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 20px !important;
+  }
+
+  .intro-inner {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center;
+    gap: 40px;
+  }
+
+  .intro-image {
+    flex: 0 0 80%; /* Make image smaller and centered */
+    max-width: 100%; /* Ensure it doesn’t overflow */
+  }
+
+  .intro-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .intro-content {
+    flex: 1;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .intro-welcome {
+    font-size: 18px; /* Adjust the welcome text */
+    margin-bottom: 15px;
+  }
+
+  .intro-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+
+  .btn-primary {
+    padding: 12px 30px; /* Adjust button size for mobile */
+    font-size: 14px;
+  }
+}
+
 
 /* ===== OVERLAP SECTION ===== */
 .overlap-section {
@@ -240,6 +336,10 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
+
+  .overlap-section {
+    padding-bottom: 0px !important;
+  }
   .overlap-inner {
     flex-direction: column;
   }
@@ -339,6 +439,65 @@ body {
   line-height: 1.5;
   color: #4a3a46;
 }
+
+@media (max-width: 600px) {
+
+  .about-calla-section {
+    padding: 60px 20px; /* Adjust padding for mobile */
+  }
+
+  .about-calla-inner {
+    flex-direction: column; /* Stack image and text vertically */
+    gap: 40px; /* Add some space between the image and text */
+    align-items: center; /* Center align the content */
+  }
+
+  .about-calla-image img {
+    height: 480px; /* Make the image smaller */
+    width: auto;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 20px; /* Add space below the image */
+  }
+
+  .about-calla-heading {
+    font-size: 28px; /* Reduce heading size */
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .about-calla-bold {
+    font-size: 18px; /* Adjust bold text size */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .about-calla-content p {
+    font-size: 16px; /* Adjust paragraph text size */
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .about-calla-info {
+    margin-top: 20px; /* Adjust spacing between sections */
+    display: flex;
+    flex-direction: column; /* Stack the info blocks vertically */
+    align-items: center;
+  }
+
+  .info-icon {
+    margin-bottom: 10px; /* Space between the icon and text */
+  }
+
+  .info-text {
+    font-size: 14px; /* Adjust font size of the info text */
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
 
 /* ===== SUPPORT / EMOTIONS SECTION ===== */
 .support-section {
@@ -527,6 +686,94 @@ footer {
   text-align: center;
 }
 
+@media (max-width: 600px) {
+
+  .support-section {
+    padding: 80px 20px; /* Adjust padding for mobile */
+  }
+
+  .support-inner {
+    flex-direction: column; /* Stack the text and image vertically */
+    align-items: center; /* Center align the content */
+    gap: 40px; /* Add some space between the text and image */
+  }
+
+  .support-text {
+    text-align: center; /* Center the text */
+    flex: 1;
+  }
+
+  .support-heading {
+    font-size: 30px; /* Adjust heading size */
+    line-height: 1.35;
+    font-weight: 300;
+    margin-bottom: 20px; /* Add space below the heading */
+  }
+
+  .support-subheading {
+    font-size: 18px; /* Adjust subheading size */
+    margin-bottom: 20px;
+  }
+
+  .support-text p {
+    font-size: 16px; /* Adjust paragraph text size */
+    line-height: 1.5;
+    margin-bottom: 16px;
+    max-width: 100%;
+    text-align: center; /* Center the text */
+  }
+
+  .support-image-frame {
+    flex: 0 0 80%; /* Adjust image size */
+    max-width: 100%; /* Ensure the image doesn't overflow */
+    margin-top: 20px; /* Add space between the text and image */
+    border: 2px solid #c9c7d8;
+    background-color: #dfdfee;
+  }
+
+  .support-image-frame img {
+    width: 100%; /* Make the image responsive */
+    height: auto;
+    display: block;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .quote-section {
+    padding: 60px 20px; /* Adjust padding for mobile */
+  }
+
+  .quote-container {
+    padding: 40px 20px; /* Adjust internal padding */
+    text-align: center; /* Center align the content */
+  }
+
+  .quote-mark {
+    font-size: 80px; /* Scale down the quote mark */
+    position: relative;
+    top: -20px; /* Adjust positioning to make it look balanced */
+  }
+
+  blockquote {
+    font-size: 20px; /* Adjust font size for the quote */
+    line-height: 1.5;
+    max-width: 100%;
+    margin: 0 auto 20px;
+    padding-top: 20px;
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-size: 32px; /* Adjust font size for readability */
+  }
+
+  footer {
+    font-size: 18px; /* Adjust footer text size */
+    font-weight: 700;
+  }
+}
+
+
 /* ===== FINAL SECTION ===== */
 .final-section {
   background-color: #3a2737;
@@ -585,4 +832,131 @@ footer {
   text-decoration: none;
   font-size: 16px;
   letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+
+  .contact-section {
+    padding: 20px 20px 20px; /* Adjust padding for mobile */
+  }
+
+  .contact-inner {
+    margin: 0 auto; /* Center the content */
+    max-width: 1200px; /* Limit the width */
+    position: relative;
+    text-align: center; /* Center-align all child elements */
+    display: block; /* Change to block-level display to stack the image and text */
+  }
+
+  .contact-image-wrapper {
+    width: 100%; /* Ensure image takes full width */
+    margin-bottom: 20px; /* Add space below the image */
+    display: block; /* Ensure the image container behaves like a block element */
+  }
+
+  .contact-image-frame {
+    width: 100%; /* Ensure the frame takes full width */
+    padding: 18px;
+    border: 0px !important
+  }
+
+  .contact-image {
+    width: 100%; /* Ensure the image fits within the frame */
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensure the image covers the area without stretching */
+  }
+
+  .contact-box {
+    width: 100%; /* Ensure the contact box takes up full width */
+    padding: 40px 20px; /* Adjust padding inside the box */
+    background: #3a2737;
+    color: #f3edf4;
+  }
+
+  .contact-heading {
+    font-size: 28px; /* Adjust heading size for mobile */
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .contact-columns {
+    display: block; /* Stack the contact columns vertically */
+    gap: 30px; /* Add space between the columns */
+    margin-bottom: 30px;
+  }
+
+  .contact-left,
+  .contact-right {
+    flex: 1;
+    text-align: center; /* Center-align the text */
+  }
+
+  .contact-box h3 {
+    font-size: 18px; /* Adjust header size */
+  }
+
+  .contact-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .small-note {
+    font-size: 14px; /* Adjust small note size */
+  }
+
+  .book-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: #d6d8ea;
+    color: #3a2737;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .final-section {
+    padding: 40px 20px; /* Adjust padding for mobile */
+    flex-direction: column; /* Stack the sections vertically */
+    text-align: center; /* Center-align the content */
+  }
+
+  .final-left,
+  .final-middle,
+  .final-right {
+    flex: 1;
+    text-align: center; /* Center-align the content in all three sections */
+    margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .final-left p,
+  .final-middle h1,
+  .final-middle .tagline {
+    font-size: 16px; /* Reduce font size for mobile */
+    text-align: center;
+  }
+
+  .final-middle h1 {
+    font-size: 24px; /* Adjust heading size for mobile */
+    margin-bottom: 10px;
+  }
+
+  .final-right .book-btn {
+    padding: 12px 35px; /* Adjust button size for mobile */
+    font-size: 16px; /* Make button text more mobile-friendly */
+    margin-top: 20px;
+  }
+
+  .final-middle hr {
+    width: 50px; /* Adjust horizontal line width for mobile */
+    margin: 10px auto;
+    border: 1px solid #dcd7e0;
+  }
 }
