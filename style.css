@@ -960,3 +960,24 @@ footer {
     border: 1px solid #dcd7e0;
   }
 }
+
+/* ===== Footer Strip ===== */
+.footer-strip {
+  background-color: #3a2737; /* Dark purple background */
+  color: #dcd7e0; /* Light cream color for text */
+  text-align: left;
+  padding: 10px 0;
+  border-top: 2px solid #dcd7e0; /* Light coral/pinkish border */
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+}
+
+.footer-strip a {
+  color: #dcd7e0; /* Light coral color for the link */
+  text-decoration: none;
+  font-weight: 200;
+}
+
+.footer-strip a:hover {
+  text-decoration: none; /* Add underline on hover */
+}
