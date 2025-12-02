@@ -823,15 +823,22 @@ footer {
   margin-top: 10px;
 }
 
-.final-right .book-btn {
+.final-right .book-btn,
+.final-right .book-btn:link,
+.final-right .book-btn:visited,
+.final-right .book-btn:hover,
+.final-right .book-btn:active,
+.final-right .book-btn:focus {
   display: inline-block;
-  padding: 14px 40px;
+  padding: 16px 34px;
   background: #d6d8ea;
   color: #3a2737;
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
+  text-decoration-skip-ink: none;
   font-size: 16px;
   letter-spacing: 2px;
+  outline: none;
 }
 
 @media (max-width: 600px) {
@@ -907,16 +914,23 @@ footer {
     font-size: 14px; /* Adjust small note size */
   }
 
-  .book-btn {
+  .book-btn,
+  .book-btn:link,
+  .book-btn:visited,
+  .book-btn:hover,
+  .book-btn:active,
+  .book-btn:focus {
     display: inline-block;
-    padding: 14px 35px;
+    padding: 16px 40px;
     background: #d6d8ea;
     color: #3a2737;
-    border-radius: 8px;
+    border-radius: 12px;
     text-decoration: none;
+    text-decoration-skip-ink: none;
     font-size: 16px;
     letter-spacing: 2px;
     margin-top: 30px;
+    outline: none;
   }
 }
 
@@ -948,10 +962,18 @@ footer {
     margin-bottom: 10px;
   }
 
-  .final-right .book-btn {
-    padding: 12px 35px; /* Adjust button size for mobile */
+  .final-right .book-btn,
+  .final-right .book-btn:link,
+  .final-right .book-btn:visited,
+  .final-right .book-btn:hover,
+  .final-right .book-btn:active,
+  .final-right .book-btn:focus {
+    padding: 14px 38px; /* Adjust button size for mobile */
     font-size: 16px; /* Make button text more mobile-friendly */
     margin-top: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    outline: none;
   }
 
   .final-middle hr {
@@ -959,6 +981,29 @@ footer {
     margin: 10px auto;
     border: 1px solid #dcd7e0;
   }
+}
+
+/* Stronger overrides for `.book-btn` to ensure browser default/visited styles are overridden.
+   This targets the anchor specifically and uses higher specificity and `!important` where needed. */
+.final-section .final-right a.book-btn,
+.final-section .final-right a.book-btn:link,
+.final-section .final-right a.book-btn:visited,
+.final-section .final-right a.book-btn:hover,
+.final-section .final-right a.book-btn:active,
+.final-section .final-right a.book-btn:focus {
+  background: #d6d8ea !important;
+  color: #3a2737 !important;
+  text-decoration: none !important;
+  border: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Provide an accessible focus ring instead of removing focus entirely */
+.book-btn:focus-visible {
+  outline: 3px solid rgba(76,57,72,0.18);
+  outline-offset: 2px;
 }
 
 /* ===== Footer Strip ===== */
